@@ -8,7 +8,7 @@ interface User2 {
     getCoupon(couponName:string, value:number):number;
 }
 
-const zeohyr:User2 = {
+const zephyr:User2 = {
     id:1,
     name:"zephyr",
     email:"zephyr@example.com",
@@ -17,5 +17,5 @@ const zeohyr:User2 = {
     getCoupon:(couponName:"MarryChrismas", value:10) => value
 }
 
-console.log(zeohyr.getCoupon("MarryChrismas", 10));
+console.log(zephyr.getCoupon("MarryChrismas", 10));
 
