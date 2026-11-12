@@ -1,6 +1,6 @@
 class User{
 
-    private _courseCount = 0;
+    protected _courseCount = 0;
 
     city:string = "";
 
@@ -29,7 +29,12 @@ class User{
     }
 }
 
-
+class SubUser extends User {
+    isFamily: boolean = true;
+    changeCourseCount(){
+        this._courseCount = 4;
+    }
+}
 
 const zephyr = new User("Zephyr", 25);
 console.log(zephyr);
