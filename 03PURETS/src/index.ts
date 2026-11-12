@@ -1,13 +1,16 @@
 class User{
-    name: string;
-    age: number;
+
     city:string = "";
 
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
+    constructor(
+        public name: string, 
+        private age: number,
+        // private userId: string
+    ) {
     }
 }
+
+
 
 const zephyr = new User("Zephyr", 25);
 console.log(zephyr);
