@@ -1,5 +1,7 @@
 class User{
 
+    private _courseCount = 0;
+
     city:string = "";
 
     constructor(
@@ -8,6 +10,23 @@ class User{
         // private userId: string
     ) {
     }
+    private deleteToken(){
+        console.log("Token deleted");
+    }
+    get getAppleEmail():string {
+        return `${this.name}@apple.com`;
+    }
+
+    get courseCount(){
+        return this._courseCount;
+    }
+
+    set courseCount(coursenum:number){
+        if (coursenum <= 1){
+            throw new Error("Course count must be greater than 1");
+        }
+        this._courseCount = coursenum;
+    }
 }
 
 
@@ -15,5 +34,10 @@ class User{
 const zephyr = new User("Zephyr", 25);
 console.log(zephyr);
 
+console.log(zephyr.getAppleEmail);
+
 zephyr.city = "Shanghai";
 console.log(zephyr);
+console.log(zephyr.courseCount);
+
+// zephyr.deleteToken();
