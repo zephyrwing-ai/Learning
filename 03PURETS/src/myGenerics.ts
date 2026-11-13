@@ -34,3 +34,18 @@ interface Bootle{
 
 identityFour<Bootle>({brand: "Coca Cola", type: "Soda"})
 
+
+function getSearchedProducts<T>(products: T[]): T | undefined{
+    // do some database operations
+    const myIndex = 2
+    return products[myIndex]
+}
+
+const getMoreSearchProducts = <T>(products: T[]): T | undefined => {
+    // do some database operations
+    const myIndex = 4
+    return products[myIndex]
+}
+
+console.log(getSearchedProducts([1, 2, 3, 4, 5]))
+console.log(getMoreSearchProducts([1, 2, 3, 4, 5]))
