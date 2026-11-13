@@ -49,3 +49,38 @@ const getMoreSearchProducts = <T>(products: T[]): T | undefined => {
 
 console.log(getSearchedProducts([1, 2, 3, 4, 5]))
 console.log(getMoreSearchProducts([1, 2, 3, 4, 5]))
+
+interface Database {
+    connection: boolean;
+    name: string;
+    email: string;
+}
+
+function anotherGenerics<T, U extends Database>(valueT: T, valueU: U):object{
+    return {
+        valueT,
+        valueU
+    }
+}
+
+console.log(anotherGenerics(1, {connection: true, name: "John", email: "john@example.com"}))
+
+
+interface Quize{
+    name: string;
+    type: string;
+}
+
+interface Course{
+    name: string;
+    author: string;
+    subject: string;
+}
+
+class Sellable<T> {
+    public cart: T[] = [];
+
+    addToCart(products: T){
+        this.cart.push(products)
+    }
+}
