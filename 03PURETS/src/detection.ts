@@ -68,3 +68,47 @@ function getFood(pet: Fish | Bird): string {
         return "bird food";
     }
 }
+
+interface Circle {
+    kind: "circle";
+    radius: number;
+}
+
+interface Square {
+    kind: "square";
+    side: number;
+}
+
+interface Rectangle {
+    kind: "rectangle";
+    width: number;
+    height: number;
+}
+
+type Shape = Circle | Square | Rectangle;
+
+function getTrueShape(shape: Shape) {
+    if(shape.kind === "circle") {
+        return Math.PI * shape.radius ** 2;
+    }
+    if(shape.kind === "square") {
+        return shape.side ** 2;
+    }
+    if(shape.kind === "rectangle") {
+        return shape.width * shape.height;
+    }
+}
+
+function getArea(shape:Shape){
+    switch(shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius **2;
+        case "square":
+            return shape.side ** 2;
+        case "rectangle":
+            return shape.width * shape.height;
+        default:
+            const _exhaustiveCheck: never = shape;
+            return _exhaustiveCheck;
+    }
+}
