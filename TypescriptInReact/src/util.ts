@@ -6,8 +6,8 @@ export function getRandomWord(): string {
     return words[randomIndex]
 }
 
-export function getFarewellText(language: string) {
-    const options = [
+export function getFarewellText(language: string):string {
+    const options: string[] = [
         `Farewell, ${language}`,
         `Adios, ${language}`,
         `R.I.P., ${language}`,
@@ -22,6 +22,6 @@ export function getFarewellText(language: string) {
         `${language} has left the building`
     ];
 
-    const randomIndex = Math.floor(Math.random() * options.length);
+    const randomIndex: number = Math.floor(Math.random() * options.length);
     return options[randomIndex];
 }
