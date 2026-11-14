@@ -3,7 +3,7 @@ import {languages} from "./languages"
 import {getRandomWord} from "./utils"
 
 import ConfettiContainer from "./components/ConfettiContainer"
-import Header from './components/Header'
+import {Header} from './components/Header'
 import GameStatus from "./components/GameStatus";
 import LanguageChips from "./components/LanguageChips";
 import WordLetters from "./components/WordLetters";
@@ -26,7 +26,7 @@ export default function AssemblyEndgame() {
     const isGameLost:boolean = wrongGuessCount >= numGuessesLeft
     const isGameOver:boolean = isGameWon || isGameLost
     const lastGuessedLetter:string = guessedLetters[guessedLetters.length - 1]
-    const isLastGuessIncorrect:boolean = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+    const isLastGuessIncorrect:boolean = lastGuessedLetter != undefined && !currentWord.includes(lastGuessedLetter)
 
     // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
