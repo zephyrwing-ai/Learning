@@ -1,4 +1,12 @@
-export default function NewGameButton({ isGameOver, startNewGame }) {
+import type { JSX } from "react/jsx-runtime"
+
+
+export type NewGameButtonProps = {
+    isGameOver: boolean
+    startNewGame: () => void
+}
+
+export default function NewGameButton({ isGameOver, startNewGame }: NewGameButtonProps): JSX.Element {
     if (!isGameOver) {
         return null
     } else {
