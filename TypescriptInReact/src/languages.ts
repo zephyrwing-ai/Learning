@@ -3,7 +3,7 @@ CHALLENGE: Type this 'languages' array
 HINT: There are 2 valid ways you can do this
 */
 
-type language = {
+export type language = {
   name: string,
   backgroundColor: string,
   color: string

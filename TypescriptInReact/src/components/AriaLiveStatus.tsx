@@ -26,7 +26,7 @@ export default function AriaLiveStatus(
                 }
                 You have {numGuessesLeft} attempts left.
             </p>
-            <p>Current word: {currentWord.split("").map(letter =>
+            <p>Current word: {currentWord.split("").map((letter:string):string =>
                 guessedLetters.includes(letter) ? letter + "." : "blank.")
                 .join(" ")}</p>
 
