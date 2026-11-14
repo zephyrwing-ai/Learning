@@ -6,7 +6,7 @@ export type NewGameButtonProps = {
     startNewGame: () => void
 }
 
-export default function NewGameButton({ isGameOver, startNewGame }: NewGameButtonProps): JSX.Element {
+export default function NewGameButton({ isGameOver, startNewGame }: NewGameButtonProps): JSX.Element | null {
     if (!isGameOver) {
         return null
     } else {
