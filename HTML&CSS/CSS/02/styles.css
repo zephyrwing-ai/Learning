@@ -3,17 +3,17 @@ Challenge:
 Select the img tag and set the width 
 of the Google logo to be 300px.
 */
-div {
+.main {
     margin-top: 100px;
 }
 
-img {
+.google {
 
     display: block;
     width: 300px;
 }
 
-input {
+.input {
 
     display: block;
     width: 400px;
