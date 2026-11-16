@@ -12,10 +12,12 @@ body {
     background: #0d1b88;
     height: 100px;
     margin-top: 20px;
+    margin-left: 50px;
 }
 
 .green {
     background: #397327;
     height: 100px;
+    margin-top: 20px;
 }
 
