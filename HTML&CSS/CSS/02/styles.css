@@ -23,4 +23,10 @@ button {
     margin: 0 auto;
     display: block;
     margin-top: 30px;
+
+    background: #dfe1e5;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: small;
 }
