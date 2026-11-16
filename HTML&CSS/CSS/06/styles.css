@@ -7,3 +7,12 @@ button {
     background: white;
     font-weight: 700;
 }
+
+/* #button design spec 
+height of content: 24px
+padding above and below: 10px
+padding left and right: 30px
+thickness of border: 1px
+color of border: #dfe1e5
+border radius: 24px
+*/
