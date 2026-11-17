@@ -1,0 +1,50 @@
+body {
+    
+    text-align: center;
+    color: #121212;
+}
+
+.card {
+    padding: 0px 30px;
+    border: 3px solid #121212;
+    display: inline-block
+}
+
+.img {
+    width: 380px;
+    margin: 0 auto;
+}
+
+.para {
+    width: 380px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.button {
+
+    margin-top: 5px;
+    width: 240px;
+    line-height: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.card a {
+  color: #000;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.input {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border: 3px solid #121212;
+    line-height: 30px;
+    padding: 5px;
+    font-weight: bold;
+    width: 220px;
+    text-align: center;
+}
