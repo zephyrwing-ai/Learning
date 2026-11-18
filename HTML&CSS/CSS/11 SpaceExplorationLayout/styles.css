@@ -1,6 +1,6 @@
 body {
     background-image: url('./images/galaxy.webp');
-    color:white;
+    color:#82a5ca;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -9,10 +9,11 @@ body {
 
 .btn {
     background-color: white;
-    color: black;
+    color: #82a5ca;
     padding: 10px 20px;
     border: none;
     font-family: Orbitron;
+    font-weight: 900;
 }
 
 @font-face {
