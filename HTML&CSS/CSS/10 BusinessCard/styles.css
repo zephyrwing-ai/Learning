@@ -11,6 +11,7 @@ body {
     border: 1px dotted blue;
     padding: 20px;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .info {
