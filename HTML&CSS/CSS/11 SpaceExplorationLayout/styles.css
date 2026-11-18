@@ -1,0 +1,17 @@
+body {
+    background-image: url('./universe.jpg');
+    color:white;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    font-family: inherit;
+}
+
