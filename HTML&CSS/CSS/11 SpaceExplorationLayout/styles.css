@@ -4,7 +4,7 @@ body {
     background-size: cover;
     background-position: center;
     text-align: center;
-    font-family: Corleone, sans-serif;
+    font-family: Orbitron, Corleone, sans-serif;
 }
 
 .btn {
@@ -18,4 +18,8 @@ body {
 @font-face {
     src: url('./TheGodfather.ttf');
     font-family: Corleone;
+}
+
+.underline {
+    border-bottom: 4px solid white;
 }
