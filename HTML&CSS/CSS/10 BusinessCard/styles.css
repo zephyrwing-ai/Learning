@@ -8,12 +8,16 @@ body {
 }
 
 .card {
+    text-align: center;
     width: 400px;
     margin: 0 auto; 
     border: 1px dotted blue;
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
+    border-bottom: 5px solid #d8cefe;
+    background: #ddebf8;
+    color: #2b2839;
 }
 
 .info {
