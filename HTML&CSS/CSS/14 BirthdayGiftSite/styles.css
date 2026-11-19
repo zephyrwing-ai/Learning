@@ -101,3 +101,13 @@ h1, h2, h3, h4, p {
 #gift5 {
     height: 200px;
 }
+
+#footer {
+    margin: 40px auto 10px;  
+    font-style: italic;
+    width: 400px;
+}
+
+a {
+    color:#FFFFFF;
+}
