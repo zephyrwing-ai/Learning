@@ -9,9 +9,22 @@
 
 // console.log(myAge);
 
-let myAge = 22;
-let humanDogRatio = 7;
+// let myAge = 22;
+// let humanDogRatio = 7;
 
-let myDogAge = myAge * humanDogRatio;
+// let myDogAge = myAge * humanDogRatio;
 
-console.log(myDogAge)
+// console.log(myDogAge)
+
+let bonuspoints = 50;
+console.log(bonuspoints);
+
+bonuspoints = bonuspoints + 50;
+console.log(bonuspoints);
+
+bonuspoints = bonuspoints - 75;
+console.log(bonuspoints);
+
+bonuspoints = bonuspoints + 45;
+console.log(bonuspoints);
+
