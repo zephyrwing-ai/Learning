@@ -1,10 +1,17 @@
 // const countEl = document.getElementById('count-el');
 // countEl.innerText = 5;
 
-let count = 0;
+// let count = 0;
 
-console.log(count);
+// console.log(count);
+
+// let myAge = 22;
+
+// console.log(myAge);
 
 let myAge = 22;
+let humanDogRatio = 7;
 
-console.log(myAge);
+let myDogAge = myAge * humanDogRatio;
+
+console.log(myDogAge)
