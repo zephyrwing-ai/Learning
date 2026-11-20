@@ -16,9 +16,6 @@ body {
     padding: 0;
 }
 
-img {
-    max-width: 100%;
-}
 
 .img-activity {
     width: 100px;
@@ -85,15 +82,18 @@ img {
     justify-content: space-around;
     align-items: center;
     background-color: #A8DADC;
+    background-size: cover;
+    width: 400px;
 }
 
 .info-card {
     color:#1D3557;
-
-
+    padding: 20px;
 }
 
-.info-img {
+.avatar {
     width: 200px;
-    height: 200px;
+    height: 250px;
+    padding: 10px;
 }
+
