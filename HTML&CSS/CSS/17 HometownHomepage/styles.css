@@ -56,9 +56,14 @@ body {
     margin: 0;
 }
 
+#activity-title {
+    font-size: 24px;
+    margin: 0;
+    padding: 20px;
+}
+
 .card-wrapper {
     display: flex;
-
     justify-content: space-evenly;
 }
 
@@ -75,6 +80,7 @@ body {
 .card-title {
     font-size: 18px;
     font-weight: bold;
+
 }
 
 .guide-section {
@@ -84,6 +90,8 @@ body {
     background-size: cover;
     width: 400px;
     margin: 40px auto;
+    border-bottom: 6px solid #1D3557;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .info-card {
@@ -91,9 +99,20 @@ body {
     padding: 20px;
 }
 
+.info-title {
+    font-weight: bold;
+}
+
+.info-text {
+    font-style: italic;
+    justify-content: space-around;
+    text-align-last: center;
+}
+
 .avatar {
     width: 200px;
     height: 250px;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 30px;
 }
 
