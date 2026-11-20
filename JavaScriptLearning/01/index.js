@@ -16,15 +16,18 @@
 
 // console.log(myDogAge)
 
-let bonuspoints = 50;
-console.log(bonuspoints);
+// let bonuspoints = 50;
+// console.log(bonuspoints);
 
-bonuspoints = bonuspoints + 50;
-console.log(bonuspoints);
+// bonuspoints = bonuspoints + 50;
+// console.log(bonuspoints);
 
-bonuspoints = bonuspoints - 75;
-console.log(bonuspoints);
+// bonuspoints = bonuspoints - 75;
+// console.log(bonuspoints);
 
-bonuspoints = bonuspoints + 45;
-console.log(bonuspoints);
+// bonuspoints = bonuspoints + 45;
+// console.log(bonuspoints);
 
+function increment () {
+    
+}
