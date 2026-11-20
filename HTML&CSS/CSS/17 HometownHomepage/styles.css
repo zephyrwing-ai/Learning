@@ -16,6 +16,10 @@ body {
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 .img-activity {
     width: 100px;
     border-radius: 50%;
@@ -74,4 +78,22 @@ body {
 .card-title {
     font-size: 18px;
     font-weight: bold;
+}
+
+.guide-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #A8DADC;
+}
+
+.info-card {
+    color:#1D3557;
+
+
+}
+
+.info-img {
+    width: 200px;
+    height: 200px;
 }
