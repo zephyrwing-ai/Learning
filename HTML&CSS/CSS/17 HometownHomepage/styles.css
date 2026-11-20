@@ -16,8 +16,9 @@ body {
     padding: 0;
 }
 
-img {
+.img-activity {
     width: 100px;
+    border-radius: 50%;
 }
 
 .head-section {
@@ -28,6 +29,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 #title {
@@ -44,4 +46,32 @@ img {
     padding: 4px 20px;
     border-radius: 5px;
     text-shadow: 0px 0px 1px black;
+}
+
+
+.activity-section {
+    color:#1D3557;
+    background-color:#F1FAEE;
+    margin: 0;
+}
+
+.card-wrapper {
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+.card {
+    color: #1D3557;
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
 }
