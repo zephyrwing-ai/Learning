@@ -79,11 +79,11 @@ body {
 
 .guide-section {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     background-color: #A8DADC;
     background-size: cover;
     width: 400px;
+    margin: 40px auto;
 }
 
 .info-card {
