@@ -14,13 +14,11 @@ body {
     height: 150px;
     width: 200px;
     font-size: 90px;
-    margin: 0px;
-    text-align: center;
+    margin: 0;
 }
 
 .btn {
     margin: 10px 0px;
-    border: none;
     display: flex;
     justify-content: space-around;
 }
