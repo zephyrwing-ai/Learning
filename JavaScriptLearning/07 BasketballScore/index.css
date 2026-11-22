@@ -21,4 +21,6 @@ body {
 .btn {
     margin: 10px 0px;
     border: none;
+    display: flex;
+    justify-content: space-around;
 }
