@@ -1,0 +1,20 @@
+body {
+    display:flex;
+    justify-content: space-around;
+
+}
+
+.score {
+    background:#0a0001;
+    color:#F94F6D;
+    height: 150px;
+    width: 200px;
+    font-size: 90px;
+    margin: 0px;
+    text-align: center;
+}
+
+.btn {
+    margin: 10px 0px;
+    border: none;
+}
