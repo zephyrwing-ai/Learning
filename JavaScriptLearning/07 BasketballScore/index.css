@@ -4,6 +4,10 @@ body {
 
 }
 
+.column {
+    text-align: center;
+}
+
 .score {
     background:#0a0001;
     color:#F94F6D;
