@@ -7,4 +7,27 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L",
     ",","|",":",";","<",">",".","?","/"];
 
 
+const passWordEl = {
+    passWord1El: document.getElementById("passWord1"),
+    passWord2El: document.getElementById("passWord2")
+}
 
+function getRandomNumber () {
+    let randomNumber = Math.floor(Math.random() * characters.length);
+    return randomNumber;
+}
+
+function generatePassword() {
+    let passWord = "";
+    for (let i = 0; i < 15; i += 1) {
+        passWord += characters[getRandomNumber()]
+    }
+    return passWord;
+}
+
+function generate2Passwords() {
+    let passWord1 = generatePassword();
+    let passWord2 = generatePassword();
+    passWordEl.passWord1El.textContent = passWord1;
+    passWordEl.passWord2El.textContent = passWord2;
+}
