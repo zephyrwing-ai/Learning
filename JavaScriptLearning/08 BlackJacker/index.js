@@ -7,7 +7,7 @@ let isAlive = true
 let message=""
 let questionEl = document.getElementById("question")
 let cardEl = document.getElementById("card")
-let sumEl = document.getElementById("sum")
+let sumEl = document.querySelector("#sum")
 
 function startGame() {
     if (sum < 21) {
