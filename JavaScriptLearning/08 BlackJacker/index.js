@@ -11,7 +11,7 @@ let cardEl = document.getElementById("card")
 let sumEl = document.querySelector("#sum")
 
 function getRandomCard() {
-    return 5;
+    return Math.floor(Math.random() * 13) + 1;
 }
 
 function startGame() {
