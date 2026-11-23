@@ -15,11 +15,13 @@ h1 {
 }
 
 button {
-    padding: 8px;
+    padding: 10px 20px;
     margin: 0;
     background: goldenrod;
-    color: green;
+    color: #016f32;
     border: none;
-    font-size: large;
+    border-radius: 2px;
+    font-size: 30px;
     text-shadow: 0px 0px 1px black;
+    width: 300px;
 }
