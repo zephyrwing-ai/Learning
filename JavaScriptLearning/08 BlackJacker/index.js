@@ -1,5 +1,6 @@
 let firstCard = 10
 let secondCard = 6
+let card = [firstCard, secondCard]
 
 let sum = firstCard + secondCard
 let hasBlackJack = false
@@ -23,7 +24,7 @@ function renderGame() {
         message="You're out of the game! 😭"
         isAlive = false;
     }
-    cardEl.textContent = "Cards: " + firstCard + "  " + secondCard;
+    cardEl.textContent = "Cards: " + card[0] + "  " + card[1];
     sumEl.textContent = "sum: " + sum
     questionEl.textContent = message
 };
@@ -32,6 +33,7 @@ function renderGame() {
 function newCard() {
     console.log("Drawing a new card from the deck!")
     let card = 10
+    card.append(card)
     sum += card
     sumEl.textContent = sum
     renderGame()
