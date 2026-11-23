@@ -15,6 +15,11 @@ function startGame() {
 }
 
 function renderGame() {
+    cardEl.textContent = "Cards: ";
+    sumEl.textContent = "sum: " + sum
+    for (let i = 0; i < cards.length; i+=1) {
+        cardEl.textContent += cards[i] + " "
+    }
     if (sum < 21) {
         message="Do you want to draw a new card? 🙂"
     }else if (sum === 21){
@@ -24,8 +29,7 @@ function renderGame() {
         message="You're out of the game! 😭"
         isAlive = false;
     }
-    cardEl.textContent = "Cards: " + cards[0] + "  " + cards[1];
-    sumEl.textContent = "sum: " + sum
+
     questionEl.textContent = message
 };
 
