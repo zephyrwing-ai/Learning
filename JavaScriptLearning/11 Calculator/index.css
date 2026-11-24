@@ -39,6 +39,10 @@ button {
     text-align: center;
 }
 
+button:hover {
+    transform: scale(1.1);  
+}
+
 #equotion {
     width: 300px;
     margin: 20px auto 0px;
