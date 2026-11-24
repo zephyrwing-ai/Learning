@@ -6,6 +6,7 @@ let ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputValue.value)
+    inputEl.value = ""
     renderLeads()
 })
 let listItem = ""
