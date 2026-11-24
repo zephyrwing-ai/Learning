@@ -1,4 +1,7 @@
-document.getElementById("btn-el").addEventListener("click", function() {
+document.getElementById("btn-el").addEventListener("click", handleClick)
+
+
+function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
     fetch(url)
     .then(function(response){
@@ -7,4 +10,4 @@ document.getElementById("btn-el").addEventListener("click", function() {
     .then(function(data) {
         return console.log(data);
     })
-})
+}
