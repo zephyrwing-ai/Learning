@@ -11,47 +11,40 @@ let playerScore = 0
 const cScoreEl = document.getElementById("cScore")
 const mScoreEl = document.getElementById("mScore")
 
-function handleClick () {
+async function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
-    fetch(url)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(data) {
-        remainingCards.textContent = `Remaining Cards: ${data.remaining}`
-        console.log(data);
-        deckId = data.deck_id
-        drawCards.disabled = false;
-    })
+    const response =await fetch(url)
+    const data = response.json()
+    remainingCards.textContent = `Remaining Cards: ${data.remaining}`
+    console.log(data);
+    deckId = data.deck_id
+    drawCards.disabled = false;
 }
 
 btnEl.addEventListener("click", handleClick)
-drawCards.addEventListener("click", function(){
+drawCards.addEventListener("click",async function(){
     if(deckId){
-        fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
-        .then(res => res.json())
-        .then(data => {
-            remainingCards.textContent = `Remaining Cards: ${data.remaining}`
-            console.log(data)
-            let cardsEl = document.getElementById("imgs")
-            for (const [index, child] of [...cardsEl.children].entries()) {
-                child.innerHTML = `<img src = "${data.cards[index].image}" class="card">`
-            }
-            const winnerText = determineCardWinner(data.cards[0],data.cards[1])
-            winnerEl.textContent = winnerText
+       const response = await fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
+       const data = await response.json()
+       remainingCards.textContent = `Remaining Cards: ${data.remaining}`
+        console.log(data)
+        let cardsEl = document.getElementById("imgs")
+        for (const [index, child] of [...cardsEl.children].entries()) {
+            child.innerHTML = `<img src = "${data.cards[index].image}" class="card">`
+        }
+        const winnerText = determineCardWinner(data.cards[0],data.cards[1])
+        winnerEl.textContent = winnerText
 
-            if (data.remaining === 0) {
-                drawCards.disabled = true;
-                if (computerScore > playerScore) {
-                    winnerEl.textContent =  "Final Winner: Computer!"
-                } else if(computerScore < playerScore){
-                    winnerEl.textContent =  "Final Winner: You!"
-                } else {
-                    winnerEl.textContent = "It's a tie game!"
-                }
+        if (data.remaining === 0) {
+            drawCards.disabled = true;
+            if (computerScore > playerScore) {
+                winnerEl.textContent =  "Final Winner: Computer!"
+            } else if(computerScore < playerScore){
+                winnerEl.textContent =  "Final Winner: You!"
+            } else {
+                winnerEl.textContent = "It's a tie game!"
             }
-
-        })
+        }
     }
 })
 
