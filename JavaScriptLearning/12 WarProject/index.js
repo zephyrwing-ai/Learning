@@ -14,6 +14,7 @@ function handleClick () {
         return response.json();
     })
     .then(function(data) {
+        remainingCards.textContent = `Remaining Cards: ${data.remaining}`
         console.log(data);
         deckId = data.deck_id
     })
