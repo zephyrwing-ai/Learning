@@ -1,3 +1,6 @@
+let deckId
+
+
 document.getElementById("btn-el").addEventListener("click", handleClick)
 
 
@@ -8,6 +11,7 @@ function handleClick () {
         return response.json();
     })
     .then(function(data) {
-        return console.log(data);
+        console.log(data);
+        deckId = data.deck_id
     })
 }
