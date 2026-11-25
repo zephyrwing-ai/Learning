@@ -6,6 +6,10 @@ const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9",
     "10", "JACK", "QUEEN", "KING", "ACE"]
 const winnerEl = document.getElementById("winner-el")
 const remainingCards = document.getElementById("remainingCard")
+let computerScore = 0
+let playerScore = 0
+const cScoreEl = document.getElementById("cScore")
+const mScoreEl = document.getElementById("mScore")
 
 function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
@@ -45,6 +49,15 @@ drawCards.addEventListener("click", function(){
 function determineCardWinner (card1, card2) {
     const score1 = valueOptions.indexOf(card1.value)
     const score2 = valueOptions.indexOf(card2.value)
-    const result = score1 > score2 ? "card1 wins!" : score1 < score2 ? "card2 wins!" : "It's a tie!"
-    return result
+    if (score1 > score2) {
+        computerScore += 1
+        cScoreEl.textContent = "Computer Score: " + computerScore
+        return "Card 1 wins!"
+    } else if (score1 < score2) {
+        playerScore += 1
+        mScoreEl.textContent = "My Score: " + playerScore
+        return "Card 2 wins!"
+    } else {
+        return "War!"
+    }
 }

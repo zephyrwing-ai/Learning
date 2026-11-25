@@ -13,6 +13,10 @@ body {
     color: white;
 }
 
+h2 {
+    margin: 0px;
+}
+
 #draw-cards {
     font-size: 1.5em;
     align-self: stretch;
@@ -61,3 +65,10 @@ img.card {
     margin-left: 10px;
 }
 
+#cScore {
+    margin: 0;
+}
+
+#mScore {
+    margin: 0;
+}
