@@ -5,6 +5,7 @@ const btnEl = document.getElementById("btn-el")
 const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
     "10", "JACK", "QUEEN", "KING", "ACE"]
 const winnerEl = document.getElementById("winner-el")
+const remainingCards = document.getElementById("remainingCard")
 
 function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
@@ -24,10 +25,11 @@ drawCards.addEventListener("click", function(){
         fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
         .then(res => res.json())
         .then(data => {
+            remainingCards.textContent = `Remaining Cards: ${data.remaining}`
             console.log(data)
             let cardsEl = document.getElementById("imgs")
             for (const [index, child] of [...cardsEl.children].entries()) {
-                child.innerHTML += `<img src = "${data.cards[index].image}" class="card">`
+                child.innerHTML = `<img src = "${data.cards[index].image}" class="card">`
             }
             const winnerText = determineCardWinner(data.cards[0],data.cards[1])
             winnerEl.textContent = winnerText
