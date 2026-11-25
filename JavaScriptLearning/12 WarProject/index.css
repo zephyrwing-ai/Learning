@@ -18,6 +18,10 @@ body {
     align-self: stretch;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 #btn-el {
     align-self: flex-start;
 }
@@ -56,3 +60,4 @@ img.card {
     margin-top: 0;
     margin-left: 10px;
 }
+

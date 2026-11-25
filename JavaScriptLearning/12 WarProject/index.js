@@ -17,6 +17,7 @@ function handleClick () {
         remainingCards.textContent = `Remaining Cards: ${data.remaining}`
         console.log(data);
         deckId = data.deck_id
+        drawCards.disabled = false;
     })
 }
 
@@ -34,6 +35,9 @@ drawCards.addEventListener("click", function(){
             }
             const winnerText = determineCardWinner(data.cards[0],data.cards[1])
             winnerEl.textContent = winnerText
+            if (data.remaining === 0) {
+                drawCards.disabled = true;
+            }
         })
     }
 })
