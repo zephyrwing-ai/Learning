@@ -4,6 +4,7 @@ const drawCards = document.getElementById("draw-cards")
 const btnEl = document.getElementById("btn-el")
 const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
     "10", "JACK", "QUEEN", "KING", "ACE"]
+const winnerEl = document.getElementById("winner-el")
 
 function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
@@ -28,13 +29,15 @@ drawCards.addEventListener("click", function(){
             for (const [index, child] of [...cardsEl.children].entries()) {
                 child.innerHTML += `<img src = "${data.cards[index].image}" class="card">`
             }
+            const winnerText = determineCardWinner(data.cards[0],data.cards[1])
+            winnerEl.textContent = winnerText
         })
     }
 })
 
 function determineCardWinner (card1, card2) {
-    const score1 = valueOptions[card1.value]
-    const score2 = valueOptions[card2.value]
+    const score1 = valueOptions.indexOf(card1.value)
+    const score2 = valueOptions.indexOf(card2.value)
     const result = score1 > score2 ? "card1 wins!" : score1 < score2 ? "card2 wins!" : "It's a tie!"
-    return console.log(result)
+    return result
 }
