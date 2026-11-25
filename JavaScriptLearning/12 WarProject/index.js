@@ -39,9 +39,18 @@ drawCards.addEventListener("click", function(){
             }
             const winnerText = determineCardWinner(data.cards[0],data.cards[1])
             winnerEl.textContent = winnerText
+
             if (data.remaining === 0) {
                 drawCards.disabled = true;
+                if (computerScore > playerScore) {
+                    winnerEl.textContent =  "Final Winner: Computer!"
+                } else if(computerScore < playerScore){
+                    winnerEl.textContent =  "Final Winner: You!"
+                } else {
+                    winnerEl.textContent = "It's a tie game!"
+                }
             }
+
         })
     }
 })
