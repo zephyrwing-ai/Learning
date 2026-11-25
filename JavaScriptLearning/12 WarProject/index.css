@@ -1,4 +1,26 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-image: url("./img/table.png");
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#draw-cards {
+    font-size: 1.5em;
+
+}
+
+#btn-el {
+    align-self: flex-start;
+}
+
+button {
+    background-color: yellow;
+
 }
