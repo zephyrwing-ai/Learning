@@ -1,9 +1,5 @@
 let deckId
 
-
-document.getElementById("btn-el").addEventListener("click", handleClick)
-
-
 function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
     fetch(url)
@@ -15,3 +11,12 @@ function handleClick () {
         deckId = data.deck_id
     })
 }
+
+document.getElementById("btn-el").addEventListener("click", handleClick)
+document.getElementById("draw-cards").addEventListener("click", function(){
+    if(deckId){
+        fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+})
