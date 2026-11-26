@@ -50,11 +50,8 @@ ulEl.addEventListener("click", function(event){
     }
 
     startDeleteConfirmation(index)
+    deleteLead (index)
 
-    myLeads.splice(index, 1)
-    pendingDeleteIndex = null
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLead(myLeads)
 })
 
 function startDeleteConfirmation(index) {
@@ -81,6 +78,13 @@ document.addEventListener("click", function(event) {
     }
     cancelDeleteConfirmation()
 })
+
+function deleteLead (index) {
+    myLeads.splice(index, 1)
+    pendingDeleteIndex = null
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    renderLead(myLeads)
+}
 
 function renderLead (leads) {
     let listItem = ""
