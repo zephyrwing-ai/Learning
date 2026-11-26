@@ -65,7 +65,15 @@ function startDeleteConfirmation(index) {
     }
 }
 
+function cancelDeleteConfirmation(){
+    const confirmingButton = ulEl.querySelector(".delete-lead-btn.is-remaining")
 
+    pendingDeleteIndex = null
+    if (confirmingButton) {
+        confirmingButton.classList.remove("is-confirming")
+    }
+    renderLead(myLeads)
+}
 
 function renderLead (leads) {
     let listItem = ""
