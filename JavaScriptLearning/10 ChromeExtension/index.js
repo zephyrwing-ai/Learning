@@ -6,8 +6,11 @@ let ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputValue.value)
+    JSON.stringify(myLeads)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLead()
     inputValue.value = ""
+
 })
 let listItem = ""
 
