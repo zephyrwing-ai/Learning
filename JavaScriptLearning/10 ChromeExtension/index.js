@@ -6,7 +6,7 @@ let ulEl = document.getElementById("ul-el")
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 const deleteBtn = document.getElementById("delete-btn")
 const tabBtn = document.getElementById("tab-btn")
-
+let pendingDeleteIndex = null
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -36,15 +36,50 @@ deleteBtn.addEventListener("dblclick", function() {
     renderLead(myLeads)
 })
 
+ulEl.addEventListener("click", function(event){
+    const deleteButton = event.target.closest(".delete-lead-btn")
+
+    if (!deleteButton) {
+        return
+    }
+
+    const index = Number(deleteButton.dataset.index)
+
+    if (!Number.isInteger(index) || index < 0 || index >= myLeads.length) {
+        return
+    }
+
+    if(pendingDeleteIndex !== index){
+        pendingDeleteIndex = index
+        renderLead(myLeads)
+        return
+    }
+
+    myLeads.splice(index, 1)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    renderLead(myLeads)
+})
+
 function renderLead (leads) {
     let listItem = ""
     for (let i = 0; i < leads.length; i += 1) {
+        const buttonClass = i === pendingDeleteIndex
+            ? "delete-lead-btn is-confirming"
+            : "delete-lead-btn"
         listItem += `
             <li>
                 <a href="${leads[i]}">
                     ${leads[i]}
-                </a>                    
+                </a>   
+                <button
+                        type="button"
+                        class="${buttonClass}"
+                        data-index="${i}"
+                    >
+                        Delete
+                </button>                 
             </li>
+
             `
     }
     ulEl.innerHTML = listItem

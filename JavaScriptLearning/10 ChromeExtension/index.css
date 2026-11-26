@@ -36,6 +36,30 @@ button {
 
 }
 
+.delete-lead-btn {
+    padding: 4px 8px;
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 1;
+    vertical-align: middle;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid black;
+    color:#5f9341;
+}
+
+.delete-lead-btn.is-confirming {
+    padding: 4px 8px;
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 1;
+    vertical-align: middle;
+    background: #d32f2f;
+    border-radius: 16px;
+    border: 1px solid #d32f2f;
+    color:whitesmoke;
+}
+
 ul {
     list-style: none;
     padding-left: 0px;
