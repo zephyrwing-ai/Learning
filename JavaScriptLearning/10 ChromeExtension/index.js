@@ -7,6 +7,7 @@ let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 const deleteBtn = document.getElementById("delete-btn")
 const tabBtn = document.getElementById("tab-btn")
 let pendingDeleteIndex = null
+let pendingDeleteTimer = null
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -84,6 +85,13 @@ function deleteLead (index) {
     pendingDeleteIndex = null
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLead(myLeads)
+}
+
+function schedulePendingDeleteReset(){
+    pendingDeleteTimer = setTimeout(function(){
+        pendingDeleteTimer = null
+        cancelDeleteConfirmation()
+    }, 5000)
 }
 
 function renderLead (leads) {
