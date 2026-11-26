@@ -5,6 +5,10 @@ let myLeads = []
 let ulEl = document.getElementById("ul-el")
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
+const tabs = [
+    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+]
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -17,6 +21,14 @@ inputBtn.addEventListener("click", function(){
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLead(myLeads)
 })
+
+
+tabBtn.addEventListener("click", function() {
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    renderLead(myLeads)
+})
+
 
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
