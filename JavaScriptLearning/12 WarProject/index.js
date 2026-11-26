@@ -14,7 +14,7 @@ const mScoreEl = document.getElementById("mScore")
 async function handleClick () {
     let url = "https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/"
     const response =await fetch(url)
-    const data = response.json()
+    const data =await response.json()
     remainingCards.textContent = `Remaining Cards: ${data.remaining}`
     console.log(data);
     deckId = data.deck_id
@@ -27,9 +27,8 @@ drawCards.addEventListener("click",async function(){
        const response = await fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
        const data = await response.json()
        remainingCards.textContent = `Remaining Cards: ${data.remaining}`
-        console.log(data)
-        let cardsEl = document.getElementById("imgs")
-        for (const [index, child] of [...cardsEl.children].entries()) {
+       let cardsEl = document.getElementById("imgs")
+       for (const [index, child] of [...cardsEl.children].entries()) {
             child.innerHTML = `<img src = "${data.cards[index].image}" class="card">`
         }
         const winnerText = determineCardWinner(data.cards[0],data.cards[1])
