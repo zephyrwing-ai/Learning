@@ -56,6 +56,7 @@ ulEl.addEventListener("click", function(event){
     }
 
     myLeads.splice(index, 1)
+    pendingDeleteIndex = null
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLead(myLeads)
 })

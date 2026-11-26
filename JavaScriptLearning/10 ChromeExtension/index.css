@@ -24,16 +24,25 @@ input {
 button {
     border: 1px solid #5f9341;
     padding: 10px 20px;
-    color: white;
-    background: #5f9341;
     margin-top: 5px;
     font-weight: bold;
+    background: white;
+    color: #5f9341;
+}
+
+button:hover {
+    color: white;
+    background: #5f9341;
 }
 
 #delete-btn {
     background: white;
     color:#5f9341;
+}
 
+#delete-btn:hover {
+    color: white;
+    background: #5f9341;
 }
 
 .delete-lead-btn {
@@ -46,6 +55,12 @@ button {
     border-radius: 16px;
     border: 1px solid black;
     color:#5f9341;
+}
+
+.delete-lead-btn:hover {
+    background: #5f9341;
+    border-color: #5f9341;
+    color: white;
 }
 
 .delete-lead-btn.is-confirming {
