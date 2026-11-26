@@ -4,6 +4,9 @@ let inputValue = document.getElementById("input-el")
 let myLeads = []
 let ulEl = document.getElementById("ul-el")
 
+localStorage.clear()
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputValue.value)
     JSON.stringify(myLeads)
