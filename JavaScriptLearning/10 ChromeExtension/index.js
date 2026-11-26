@@ -75,6 +75,13 @@ function cancelDeleteConfirmation(){
     renderLead(myLeads)
 }
 
+document.addEventListener("click", function(event) {
+    if (event.target.closest(".delete-lead-btn")){
+        return
+    }
+    cancelDeleteConfirmation()
+})
+
 function renderLead (leads) {
     let listItem = ""
     for (let i = 0; i < leads.length; i += 1) {
