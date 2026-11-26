@@ -7,6 +7,11 @@ let ulEl = document.getElementById("ul-el")
 localStorage.clear()
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    renderLead()
+}
+
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputValue.value)
     JSON.stringify(myLeads)
