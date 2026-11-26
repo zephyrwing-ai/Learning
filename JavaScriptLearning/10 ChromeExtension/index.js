@@ -49,17 +49,23 @@ ulEl.addEventListener("click", function(event){
         return
     }
 
-    if(pendingDeleteIndex !== index){
-        pendingDeleteIndex = index
-        renderLead(myLeads)
-        return
-    }
+    startDeleteConfirmation(index)
 
     myLeads.splice(index, 1)
     pendingDeleteIndex = null
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLead(myLeads)
 })
+
+function startDeleteConfirmation(index) {
+        if(pendingDeleteIndex !== index){
+        pendingDeleteIndex = index
+        renderLead(myLeads)
+        return
+    }
+}
+
+
 
 function renderLead (leads) {
     let listItem = ""
