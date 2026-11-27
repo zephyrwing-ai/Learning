@@ -8,6 +8,12 @@ const deleteBtn = document.getElementById("delete-btn")
 const tabBtn = document.getElementById("tab-btn")
 let pendingDeleteIndex = null
 let pendingDeleteTimer = null
+const buttons = document.querySelectorAll('.delete-lead-btn.is-confirming')
+let activeButton = null
+
+
+
+
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
@@ -18,6 +24,7 @@ inputBtn.addEventListener("click", function(){
     myLeads.push(inputValue.value)
     inputValue.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    cancelDeleteConfirmation()
     renderLead(myLeads)
 })
 
@@ -26,12 +33,14 @@ tabBtn.addEventListener("click", function() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        cancelDeleteConfirmation()
         renderLead(myLeads)
     })
 })
 
 
 deleteBtn.addEventListener("dblclick", function() {
+    cancelDeleteConfirmation()
     localStorage.clear()
     myLeads = []
     renderLead(myLeads)
@@ -40,58 +49,78 @@ deleteBtn.addEventListener("dblclick", function() {
 ulEl.addEventListener("click", function(event){
     const deleteButton = event.target.closest(".delete-lead-btn")
 
-    if (!deleteButton) {
-        return
-    }
+    if (!deleteButton)  return
 
     const index = Number(deleteButton.dataset.index)
 
     if (!Number.isInteger(index) || index < 0 || index >= myLeads.length) {
         return
     }
-
-    startDeleteConfirmation(index)
-    deleteLead (index)
-
-})
-
-function startDeleteConfirmation(index) {
-        if(pendingDeleteIndex !== index){
-        pendingDeleteIndex = index
-        renderLead(myLeads)
-        return
-    }
-}
-
-function cancelDeleteConfirmation(){
-    const confirmingButton = ulEl.querySelector(".delete-lead-btn.is-remaining")
-
-    pendingDeleteIndex = null
-    if (confirmingButton) {
-        confirmingButton.classList.remove("is-confirming")
-    }
-    renderLead(myLeads)
-}
-
-document.addEventListener("click", function(event) {
-    if (event.target.closest(".delete-lead-btn")){
+    if (activeButton === deleteButton && pendingDeleteIndex === index) {
+        deleteLead(index)
         return
     }
     cancelDeleteConfirmation()
+
+    activeButton = deleteButton
+    pendingDeleteIndex = index
+    activeButton.classList.add("is-confirming")
 })
 
+ulEl.addEventListener("mouseout", (event) => {
+    const button = event.target.closest(".delete-lead-btn")
+    if(!button || !button.contains(event.target)) return
+
+    if(button.contains(event.relatedTarget)) return
+
+    if(activeButton !== button) return
+    clearTimeout(pendingDeleteTimer)
+    pendingDeleteTimer = setTimeout(() => {
+        cancelDeleteConfirmation()
+    }, 2000)
+})
+
+
+ulEl.addEventListener("mouseover", (event) => {
+    const button = event.target.closest(".delete-lead-btn")
+    if (!button) return
+
+    if (button.contains(event.relatedTarget)) return
+
+    if (activeButton !== button) return
+
+    clearTimeout(pendingDeleteTimer)
+    pendingDeleteTimer = null
+})
+
+document.addEventListener("click", function(event) {
+
+    if (event.target.closest(".delete-lead-btn")) {
+        return
+    }
+
+    cancelDeleteConfirmation()
+
+})
+
+function cancelDeleteConfirmation() {
+    clearTimeout(pendingDeleteTimer)
+
+    if (activeButton) {
+        activeButton.classList.remove("is-confirming")
+    }
+
+    activeButton = null
+    pendingDeleteIndex = null
+    pendingDeleteTimer = null
+}
+
 function deleteLead (index) {
+    cancelDeleteConfirmation()
     myLeads.splice(index, 1)
     pendingDeleteIndex = null
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLead(myLeads)
-}
-
-function schedulePendingDeleteReset(){
-    pendingDeleteTimer = setTimeout(function(){
-        pendingDeleteTimer = null
-        cancelDeleteConfirmation()
-    }, 5000)
 }
 
 function renderLead (leads) {
