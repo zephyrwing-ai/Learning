@@ -69,7 +69,7 @@ ulEl.addEventListener("click", function(event){
 
 ulEl.addEventListener("mouseout", (event) => {
     const button = event.target.closest(".delete-lead-btn")
-    if(!button || !button.contains(event.target)) return
+    if(!button) return
 
     if(button.contains(event.relatedTarget)) return
 
