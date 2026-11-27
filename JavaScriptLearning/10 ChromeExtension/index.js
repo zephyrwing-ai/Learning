@@ -131,7 +131,11 @@ function renderLead (leads) {
             : "delete-lead-btn"
         listItem += `
             <li>
-                <a href="${leads[i]}">
+                <a 
+                href="${leads[i]}" 
+                target = _blank
+                rel="noopener noreferrer"
+                >
                     ${leads[i]}
                 </a>   
                 <button
